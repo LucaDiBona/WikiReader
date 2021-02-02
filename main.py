@@ -54,10 +54,13 @@ def infobar(page, section):
     return infoBar
 
 
-# takes a str input and returns a str arranged to fit nicely in the terminal window
+# takes a str input and returns a list of strings arranged to fit nicely in the terminal window
 def textProcess(inputStr):
     num_rows, num_cols =screen.getmaxyx()
     outputStr = ""
+    outputList = []
+    winHeight=num_rows-2
+    lines = 0
     inputLen = len(inputStr)
     while len(outputStr) < inputLen:  # max length string displayed
         if len(inputStr) <=1:
@@ -77,7 +80,12 @@ def textProcess(inputStr):
         # removes processed line from temp string
         inputStr = inputStr[len(lineStr):]
         outputStr += lineStr
-    return outputStr
+        lines += 1
+    if lines<=winHeight:
+        outputList.append(outputStr)
+    else:
+
+    return outputList
 
 
 mainText = textProcess(page.summary)
