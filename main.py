@@ -5,6 +5,19 @@ import wikipedia
 
 This code displays the wikipedia page for python in a terminal window.
 
+
+TODO:
+
+[ ] Ensure window fits on screen
+[ ] Add command line
+[ ] Add commands to move sections
+[ ] Add commands to view sources & footnotes
+[ ] Add a way to follow external links (inc images)
+[ ] Parse tables
+[ ] Parse sidebars & other custom infoboxes
+[ ] Bookmarks
+[ ] History
+[ ] Local downloads?
 """
 currentPage = "Python (programming langauge)"
 
@@ -43,7 +56,7 @@ def infobar(page, section):
 
 # takes a str input and returns a str arranged to fit nicely in the terminal window
 def textProcess(inputStr):
-    num_rows, num_cols = screen.getmaxyx()
+    num_rows, num_cols =screen.getmaxyx()
     outputStr = ""
     inputLen = len(inputStr)
     while len(outputStr) < inputLen:  # max length string displayed
