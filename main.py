@@ -1,6 +1,6 @@
 import curses
 import wikipedia
-from textline import Textline
+from textline import Textline, PageTitle
 """
 
 This code displays the wikipedia page for python in a terminal window.
@@ -18,6 +18,7 @@ TODO:
 [ ] Bookmarks
 [ ] History
 [ ] Local downloads?
+[ ] Customise prompts, separators etc.
 """
 currentPage = "Python (programming langauge)"
 
@@ -105,6 +106,3 @@ screen.keypad(False)
 curses.echo()
 curses.endwin()
 
-testing = Textline("123456789012345678901234567890")
-
-print(testing.output(50,None))
