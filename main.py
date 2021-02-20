@@ -1,6 +1,6 @@
 import curses
 import wikipedia
-from textline import Textline, PageTitle
+from textline import Textline, Title, SectionTitle
 """
 
 This code displays the wikipedia page for python in a terminal window.
@@ -105,4 +105,3 @@ curses.nocbreak()
 screen.keypad(False)
 curses.echo()
 curses.endwin()
-
