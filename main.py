@@ -1,6 +1,6 @@
 import curses
 import wikipedia
-
+from textline import Textline
 """
 
 This code displays the wikipedia page for python in a terminal window.
@@ -40,7 +40,7 @@ screen.keypad(True)
 
 
 # outputs an infobar, a sting of the form [current page] | [current section]
-def infobar(page, section, ):
+def infobar(page, section ):
     num_rows, num_cols = screen.getmaxyx()
     infoBar = page + " | " + section
     while len(infoBar) < num_cols:
@@ -104,3 +104,7 @@ curses.nocbreak()
 screen.keypad(False)
 curses.echo()
 curses.endwin()
+
+testing = Textline("123456789012345678901234567890")
+
+print(testing.output(50,None))
