@@ -40,7 +40,7 @@ screen.keypad(True)
 
 
 # outputs an infobar, a sting of the form [current page] | [current section]
-def infobar(page, section):
+def infobar(page, section, ):
     num_rows, num_cols = screen.getmaxyx()
     infoBar = page + " | " + section
     while len(infoBar) < num_cols:
@@ -84,7 +84,7 @@ def textProcess(inputStr):
     if lines<=winHeight:
         outputList.append(outputStr)
     else:
-
+        pass
     return outputList
 
 
@@ -94,7 +94,7 @@ screen.addstr(0, 0, infobar(currentPage, "Lorem ipsum dolor sit amet, consectetu
 
 print(mainText)
 
-screen.addstr(1, 0, mainText)
+screen.addstr(1, 0, mainText[0])
 screen.refresh()
 curses.napms(3000)
 
